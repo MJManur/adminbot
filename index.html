@@ -5,7 +5,7 @@
     <title>Главная | Funtime</title>
     <style>
         body {
-            background-image: url("https://cdn.discordapp.com/attachments/1194121869549379624/1199295277392220180/MLShare.jpg?ex=65f964c3&is=65e6efc3&hm=b8067e572db7ba5407bb4f788eb4540350947e44e0b8d95c672520a6c211b8d9&");
+            background-image: url("https://cdn.discordapp.com/attachments/1194164856585191444/1215290477457448970/background-blur.png?ex=65fc3674&is=65e9c174&hm=81466a975f3affc815956d13525bc892b78b550d318ed01a18eb255a27c47acf&");
             background-repeat: no-repeat;
             background-size: cover;
             padding: 20px;
@@ -34,50 +34,37 @@
             text-decoration: none;
         }
         
-        .privilege-container {
+        .main-content {
             display: flex;
-            overflow-x: scroll;
+            flex-wrap: wrap;
             gap: 20px;
-            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+        
+        .privilege-container {
+            width: 300px;
         }
         
         .privilege {
             padding: 10px;
             background-color: #fff;
             border-radius: 5px;
-            width: 300px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             text-align: center;
-        }
-
-        .privilege img {
-            width: 43px;
-            height: 40px;
-            margin-bottom: 10px;
         }
         
         .privilege h3 {
             margin: 0;
         }
         
-        .privilege p {
-            margin: 10px 0;
-        }
-        
-        .buy-button {
-            margin-top: auto;
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: #fff;
-            border: none;
+        .description {
+            padding: 10px;
+            background-color: #fff;
             border-radius: 5px;
-            cursor: pointer;
+            flex-grow: 1;
         }
         
-        .buy-button:hover {
-            background-color: #0056b3;
+        .description h2 {
+            margin: 0;
         }
         
         .footer {
@@ -105,37 +92,47 @@
             <!-- Вставьте логотип вашего проекта -->
             <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215287651024900106/image.png?ex=65fc33d2&is=65e9bed2&hm=433ec8a23503fc3ac823e603087f7884b0d9da1c24ec34dbe5aead81e827fda8&">
         </div>
-        <nav class="navigation">
-            <a href="#main">Главная</a>
-            <a href="#promotion">Акции</a>
-            <a href="#rules">Правила</a>
-            <a href="#contacts">Контакты</a>
-        </nav>
     </header>
     
-    <section id="main">
-        <h2>Главная</h2>
-        
+    <div class="main-content">
+    
         <div class="privilege-container">
-            <div class="privilege">
-                <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Герцог">
+            <div class="privilege" onclick="showDescription(1)">
                 <h3>Привилегия 1</h3>
-                <p>⚕ Префикс в чате и табе: [Герцог] ВашНик</p> <!-- Здесь описание привилегии -->
-                <p>Цена: от 2379 рублей</p>
-                <button class="buy-button" onclick="window.location.href = 'https://qiwi.com/';">Купить</button>
+                <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Герцог">
+                <p>Цена: от 2370 рублей</p>
             </div>
             
-            <div class="privilege">
-                <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Привилегия 2">
+            <div class="privilege" onclick="showDescription(2)">
                 <h3>Привилегия 2</h3>
-                <p></p>
+                <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Привилегия 2">
                 <p>Цена: 200 рублей</p>
-                <button class="buy-button" onclick="window.location.href = 'ССЫЛКА_НА_САЙТ';">Купить</button>
             </div>
-                        <!-- Добавьте остальные привилегии аналогично -->
+            
+            <!-- Добавьте остальные привилегии аналогично -->
             
         </div>
-    </section>
+    
+        <div class="description">
+            <div id="privilege1" style="display:none;">
+                <h2>Герцог</h2>
+                <p>⚕ Префикс в чате и табе: [Страж] ВашНик
+› /kit Страж ⇨ Получить набор Стража
+› /suicide ⇨ Покончить жизнь самоубийством
+› /dchat ⇨ Воспользоваться Донат-Чатом</p>
+                <p>Цена: 2370 рублей</p>
+                <button class="buy-button" onclick="location.href = 'https://qiwi.com/';">Купить</button>
+            </div>
+            <div id="privilege2" style="display:none;">
+                <h2>Привилегия 2</h2>
+                <p>Описание привилегии 2</p>
+                <p>Цена: 200 рублей</p>
+                                <button class="buy-button" onclick="location.href = 'ССЫЛКА_НА_САЙТ';">Купить</button>
+            </div>
+            <!-- Добавьте описание для каждой привилегии аналогично -->
+        </div>
+        
+    </div>
     
     <section id="promotion">
         <h2>Акции</h2>
@@ -160,18 +157,31 @@
         </div>
         
         <div>
-            <!-- Добавьте данные о владельце сайта, ИНН, ИП и т.д. -->
+            <!-- Перенесите данные о владельце сайта, ИНН, ИП и др.-->
             <p>Владелец сайта: ИП ФИО</p>
             <p>ИНН: Ваш ИНН</p>
             <!-- Добавьте ссылки на способы оплаты -->
             <p>Методы оплаты:</p>
             <div class="payment-methods">
-                <a href="ССЫЛКА_НА_СПОСОБ">СБП</a>
+                <a href="https://cdn.discordapp.com/attachments/1194165601485213768/1215288217100746832/image.png?ex=65fc3459&is=65e9bf59&hm=664bd2e1289c59395b327daaeb70eae54b271090ea4e0f5434c483578d126e6a&">СБП</a>
                 <a href="ССЫЛКА_НА_СПОСОБ">Сбербанк</a>
                 <a href="ССЫЛКА_НА_СПОСОБ">Яндекс.Деньги</a>
                 <a href="ССЫЛКА_НА_СПОСОБ">WebMoney</a>
             </div>
         </div>
     </footer>
+    
+    <script>
+        function showDescription(privilegeId) {
+            var descriptionElement = document.getElementById('privilege' + privilegeId);
+            
+            var allDescriptionElements = document.querySelectorAll('.description > div');
+            allDescriptionElements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+            
+            descriptionElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
