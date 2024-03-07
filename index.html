@@ -14,15 +14,19 @@ body {
   width: 445px;
   height: 500px;
   background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px 0 0 0;
+  padding: 0;
   position: relative;
 }
 
 .highlight {
   background-color: #FF1439;
   height: 20px;
-  margin-bottom: 50px;
-  width: 100%;
+  width: calc(100% + 20px);
+  position: relative;
+  left: -10px;
+  top: -20px;
+  z-index: 1;
+  filter: drop-shadow(0 0 20px #FF1439);
 }
 
 .title {
@@ -70,7 +74,7 @@ body {
 
   <div class="product">
     <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Привилегия">
-    <div style="margin-left: -54px;">
+    <div>
       <p>Название привилегии 1</p>
       <p class="price">от 15 РУБ</p>
     </div>
@@ -78,7 +82,7 @@ body {
 
   <div class="product">
     <img src="ссылка на картинку" alt="Привилегия">
-    <div style="margin-left: -54px;">
+    <div>
       <p>Название привилегии 2</p>
       <p class="price">от 20 РУБ</p>
     </div>
@@ -86,7 +90,7 @@ body {
 
   <div class="product">
     <img src="ссылка на картинку" alt="Привилегия">
-    <div style="margin-left: -54px;">
+    <div>
       <p>Название привилегии 3</p>
       <p class="price">от 25 РУБ</p>
     </div>
@@ -94,7 +98,7 @@ body {
 
   <div class="product">
     <img src="ссылка на картинку" alt="Привилегия">
-    <div style="margin-left: -54px;">
+    <div>
       <p>Название привилегии 4</p>
       <p class="price">от 30 РУБ</p>
     </div>
