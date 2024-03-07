@@ -6,6 +6,8 @@
 body {
   background-image: url("https://cdn.discordapp.com/attachments/1194164856585191444/1215290477457448970/background-blur.png?ex=65fc3674&is=65e9c174&hm=81466a975f3affc815956d13525bc892b78b550d318ed01a18eb255a27c47acf&");
   background-size: cover;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
 }
 
 .container {
@@ -18,16 +20,20 @@ body {
 
 .highlight {
   background-color: #FF1439;
-  height: 4px;
+  height: 20px;
   margin-bottom: 50px;
-  width: 100%;
+  width: calc(100% + 20px);
+  position: relative;
+  left: -10px;
+  top: -4px;
+  filter: drop-shadow(0 0 20px #FF1439);
 }
 
 .title {
   font-size: 22px;
   color: #fff;
   margin-bottom: 50px;
-  padding-left: 85px;
+  text-align: center;
 }
 
 .product {
@@ -64,29 +70,29 @@ body {
 <body>
 <div class="container">
   <div class="highlight"></div>
-  <h1 class="title">Выберите товар:</h1>
+  <h1 class="title" style="text-align: center;">Выберите товар</h1>
 
   <div class="product">
     <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Привилегия">
-    <p>Барон</p>
+    <p>Герцог</p>
     <p class="price">от 15 РУБ</p>
   </div>
 
   <div class="product">
     <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Привилегия">
-    <p>Страж</p>
+    <p>Название привилегии 2</p>
     <p class="price">от 20 РУБ</p>
   </div>
 
   <div class="product">
     <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Привилегия">
-    <p>Герой</p>
+    <p>Название привилегии 3</p>
     <p class="price">от 25 РУБ</p>
   </div>
 
   <div class="product">
     <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215281611587854346/61.png?ex=65fc2e33&is=65e9b933&hm=49be2d8063a6944c081da2e0b39f3ff6607f41e780b06f134cce0bb1e060be50&" alt="Привилегия">
-    <p>Аспид</p>
+    <p>Название привилегии 4</p>
     <p class="price">от 30 РУБ</p>
   </div>
 
