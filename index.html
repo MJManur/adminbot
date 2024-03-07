@@ -1,106 +1,190 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Главная | MJServer</title>
-<style>
-body {
-  background-image: url("ссылка на background");
-  background-size: cover;
-}
-
-.logo {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
-.nav {
-  text-align: center;
-  margin-top: 50px;
-}
-
-.nav a {
-  margin: 0 20px;
-  color: #fff;
-  text-decoration: none;
-}
-
-.highlight {
-  background-color: rgba(255, 0, 0, 0.5);
-  padding: 10px;
-}
-
-.window {
-  width: 400px;
-  height: 300px;
-  background-color: #fff;
-  margin: 20px;
-  border-radius: 10px;
-  overflow-y: auto;
-  padding: 10px;
-}
-
-.scrollbar {
-  width: 8px;
-  background-color: #ff69b4;
-  position: absolute;
-  right: 0;
-  top: 0;
-}
-
-.scrollbar-thumb {
-  width: 100%;
-  height: 20%;
-  background-color: #e75480;
-}
-
-.footer {
-  background-color: #fff;
-  color: #000;
-  text-align: center;
-  padding: 10px;
-}
-</style>
+    <meta charset="UTF-8">
+    <title>Сайт покупки привилегий</title>
+    <style>
+        body {
+            background-image: url("ССЫЛКА_НА_КАРТИНКУ");
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 20px;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 24px;
+            color: #fff;
+        }
+        
+        .navigation {
+            display: flex;
+            gap: 20px;
+        }
+        
+        .navigation a {
+            color: #fff;
+            text-decoration: none;
+        }
+        
+        .main-content {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        
+        .privilege-container {
+            width: 300px;
+        }
+        
+        .privilege {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+        
+        .privilege h3 {
+            margin: 0;
+        }
+        
+        .description {
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 5px;
+            flex-grow: 1;
+        }
+        
+        .description h2 {
+            margin: 0;
+        }
+        
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .payment-methods {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        
+        .payment-methods img {
+            width: 50px;
+            height: 30px;
+        }
+    </style>
 </head>
 <body>
-<div class="logo">
-  <img src="ссылка на логотип" alt="Логотип">
-</div>
-
-<div class="nav">
-  <a href="#">Главная</a>
-  <a href="#">Акции</a>
-  <a href="#">Правила</a>
-  <a href="#">Контакты</a>
-</div>
-
-<div class="window">
-  <h2>Выберите товар</h2>
-  <div class="highlight">
-    <img src="ссылка на картинку привиллегии" alt="Привиллегия">
-    <p>Описание привиллегии</p>
-    <p>Цена: $XX</p>
-    <a href="#">Купить</a>
-  </div>
-
-  <div class="scrollbar">
-    <div class="scrollbar-thumb"></div>
-  </div>
-</div>
-
-<div class="window">
-  <h2>Описание товара</h2>
-  <p>Описание привиллегии ВИП</p>
-  <p>Цена: $XX</p>
-  <a href="#">Купить</a>
-
-  <div class="scrollbar">
-    <div class="scrollbar-thumb"></div>
-  </div>
-</div>
-
-<div class="footer">
-  <p>ИНН: XXXXXXXXX | Владелец сайта: имя владельца</p>
-</div>
+    <header>
+        <div class="logo">
+            <!-- Вставьте логотип вашего проекта -->
+            <img src="ССЫЛКА_НА_ЛОГОТИП">
+        </div>
+        <nav class="navigation">
+            <a href="#main">Главная</a>
+            <a href="#promotion">Акции</a>
+            <a href="#rules">Правила</a>
+            <a href="#contacts">Контакты</a>
+        </nav>
+    </header>
+    
+    <div class="main-content">
+    
+        <div class="privilege-container">
+            <div class="privilege" onclick="showDescription(1)">
+                <h3>Привилегия 1</h3>
+                <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Привилегия 1">
+                <p>Цена: 100 рублей</p>
+            </div>
+            
+            <div class="privilege" onclick="showDescription(2)">
+                <h3>Привилегия 2</h3>
+                <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Привилегия 2">
+                <p>Цена: 200 рублей</p>
+            </div>
+            
+            <!-- Добавьте остальные привилегии аналогично -->
+            
+        </div>
+    
+        <div class="description">
+            <div id="privilege1" style="display:none;">
+                <h2>Привилегия 1</h2>
+                <p>Описание привилегии 1</p>
+                <p>Цена: 100 рублей</p>
+                <button class="buy-button" onclick="location.href = 'ССЫЛКА_НА_САЙТ';">Купить</button>
+            </div>
+            <div id="privilege2" style="display:none;">
+                <h2>Привилегия 2</h2>
+                <p>Описание привилегии 2</p>
+                <p>Цена: 200 рублей</p>
+                                <button class="buy-button" onclick="location.href = 'ССЫЛКА_НА_САЙТ';">Купить</button>
+            </div>
+            <!-- Добавьте описание для каждой привилегии аналогично -->
+        </div>
+        
+    </div>
+    
+    <section id="promotion">
+        <h2>Акции</h2>
+        <!-- Добавьте содержимое раздела "Акции" -->
+    </section>
+    
+    <section id="rules">
+        <h2>Правила</h2>
+        <!-- Добавьте содержимое раздела "Правила" -->
+    </section>
+    
+    <section id="contacts">
+        <h2>Контакты</h2>
+        <!-- Добавьте содержимое раздела "Контакты" -->
+    </section>
+    
+    <footer class="footer">
+        <div class="payment-methods">
+            <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Сбербанк">
+            <img src="ССЫЛКА_НА_КАРТИНКУ" alt="Яндекс.Деньги">
+            <img src="ССЫЛКА_НА_КАРТИНКУ" alt="WebMoney">
+        </div>
+        
+        <div>
+            <!-- Перенесите данные о владельце сайта, ИНН, ИП и др.-->
+            <p>Владелец сайта: ИП ФИО</p>
+            <p>ИНН: Ваш ИНН</p>
+            <!-- Добавьте ссылки на способы оплаты -->
+            <p>Методы оплаты:</p>
+            <div class="payment-methods">
+                <a href="ССЫЛКА_НА_СПОСОБ">СБП</a>
+                <a href="ССЫЛКА_НА_СПОСОБ">Сбербанк</a>
+                <a href="ССЫЛКА_НА_СПОСОБ">Яндекс.Деньги</a>
+                <a href="ССЫЛКА_НА_СПОСОБ">WebMoney</a>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function showDescription(privilegeId) {
+            var descriptionElement = document.getElementById('privilege' + privilegeId);
+            
+            var allDescriptionElements = document.querySelectorAll('.description > div');
+            allDescriptionElements.forEach(function(element) {
+                element.style.display = 'none';
+            });
+            
+            descriptionElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
