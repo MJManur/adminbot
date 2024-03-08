@@ -120,25 +120,6 @@ body {
 </head>
 <body>
 <div class="container">
-    <div class="scrollbar"></div>
-</div>
-
-<script>
-var scrollbar = document.querySelector('.scrollbar');
-var scrollContainer = scrollbar.parentElement;
-
-scrollContainer.addEventListener('scroll', function() {
-  var scrollbarHeight = scrollbar.clientHeight;
-  var containerHeight = scrollContainer.clientHeight;
-
-  var maxScrollTop = scrollContainer.scrollHeight - containerHeight;
-  var scrollRatio = scrollContainer.scrollTop / maxScrollTop;
-
-  var scrollbarPosition = (containerHeight - scrollbarHeight) * scrollRatio;
-
-  scrollbar.style.top = scrollbarPosition + 'px';
-});
-</script>
     <div class="logo">
     <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215737760221233242/123.png?ex=65fdd705&is=65eb6205&hm=310daf4272c1b1d8e1b4ffa3c5c06ecfa2046f401ddf50503d551ecc56a26828&" alt="CelestialCraftlogo">
   </div>
