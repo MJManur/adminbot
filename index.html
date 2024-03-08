@@ -22,7 +22,6 @@ body {
   transform: translate(-50%, -50%);
   box-shadow: 0 18px 40px -12px #FF1439;
   overflow: hidden;
-  overflow-y: scroll;
 }
 
 .highlight {
@@ -70,6 +69,12 @@ body {
   position: absolute;
   top: 0;
   right: 0;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.scrollbar:hover {
+  opacity: 1;
 }
 
 .second-container {
@@ -130,7 +135,7 @@ body {
   </div>
 
   <div class="product">
-        <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215315336820166738/53.png?ex=65fc4d9b&is=65e9d89b&hm=e6d121fb2fae7fba7080d1ec02314d94bdbaf8f9630aec463ae758ebbbccd8df&" alt="Привилегия">
+    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215315336820166738/53.png?ex=65fc4d9b&is=65e9d89b&hm=e6d121fb2fae7fba7080d1ec02314d94bdbaf8f9630aec463ae758ebbbccd8df&" alt="Привилегия">
     <p>Герой</p>
     <p class="price"><b>от 129 РУБ</b></p>
   </div>
@@ -142,12 +147,19 @@ body {
   </div>
 
    <div class="product">
-    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215726698981625937/55.png?ex=65fdccb8&is=65eb57b8&hm=85f39168a5e3e9b64b8b858898b4d1e782f00e3f34f25466e83082bee8d79db0&" alt="Привилегия">
+         <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215726698981625937/55.png?ex=65fdccb8&is=65eb57b8&hm=85f39168a5e3e9b64b8b858898b4d1e782f00e3f34f25466e83082bee8d79db0&" alt="Привилегия">
     <p>Сквид</p>
     <p class="price"><b>от 349 РУБ</b></p>
   </div>
-
-  <div class="scrollbar"></div>
+</div>
+<div class="scrollbar"></div>
+<div class="second-container">
+  <div class="footer">
+    <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215768812655028224/sbp.png" alt="СБП">
+    <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215768813855868928/sberbank.png" alt="Сбербанк">
+    <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215768822520276992/visa.png" alt="VISA">
+    <img src="https://cdn.discordapp.com/attachments/1194121869549379624/1215768825143890432/mastercard.png" alt="MasterCard">
+  </div>
 </div>
 </body>
 </html>
