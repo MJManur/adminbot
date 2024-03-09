@@ -244,16 +244,7 @@ body {
     <p>ИП Дебушевский Егор Валерьевич </p> &nbsp;
     <p>ИНН 612803668095 </p>
   </div>
-</div>
-
-  <div class="footer">
-    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215402865368104980/spb.png?ex=65fc9f20&is=65ea2a20&hm=bb4e3f200e34478a2bfd8e7ca439a81f1f57756733b02830c37f68a3fee3bc74&" alt="СБП">
-    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215402460177240144/Mir-logo.SVG.png?ex=65fc9ebf&is=65ea29bf&hm=76696918f4cff07cd244367fb05e5b7acb4d431f2aafafb2e6d638c00a155bab&" alt="МИР">
-    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215403143303536660/vbm_blu_2021.png?ex=65fc9f62&is=65ea2a62&hm=4597a9114e70e3ba07ccbeb98eb2e3f2bb9784c49338cb044e3005a8d60db2e4&" alt="VISA">
-    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215403346975002655/mc_symbol.png?ex=65fc9f93&is=65ea2a93&hm=333e3b454a8cc0f35a8de7eaf0530d30ccb7d4ec034298f92cea2ff800743f7e&" alt="MasterCard">
-  </div>
-</div>
-
+  
 <div class="overlay">
   <div id="popup" class="hidden">
     <div class="popup">
@@ -273,38 +264,32 @@ body {
   const overlay = document.querySelector('.overlay');
   const popup = document.querySelector('.overlay #popup');
 
-  // Функция для открытия всплывающего окна
   function openPopup() {
     overlay.style.display = 'flex';
     popup.classList.remove('hidden');
   }
 
-  // Функция для закрытия всплывающего окна
   function closePopup() {
     overlay.style.display = 'none';
     popup.classList.add('hidden');
   }
 
-  // Назначаем обработчик для каждого товара
   products.forEach(function(product) {
     product.addEventListener('click', function() {
-      // Устанавливаем класс "selected" для активного товара
+
       products.forEach(function(product) {
         product.classList.remove('selected');
       });
       this.classList.add('selected');
 
-      // Открываем всплывающее окно при выборе товара
       openPopup();
     });
   });
 
-  // Назначаем обработчик для кнопки "Продолжить" во всплывающем окне
   const continueBtn = document.querySelector('.overlay #popup input[type="submit"]');
   continueBtn.addEventListener('click', function(event) {
-    event.preventDefault(); // Предотвращаем отправку формы
+    event.preventDefault(); 
 
-    // Получаем значения ника и email из полей ввода
     const nickname = document.querySelector('.overlay #popup input[name="nickname"]').value;
     const email = document.querySelector('.overlay #popup input[name="email"]').value;
 
@@ -314,10 +299,6 @@ body {
       const priceText = selectedProduct.querySelector('.price').innerText;
       const price = parseInt(priceText.replace(/[^\d]/g, '')); // Удаляем все символы кроме цифр
 
-      // Здесь можно добавить редирект на соответствующий сайт в зависимости от выбранного товара
-      // Используйте window.location.href для перенаправления на другую страницу
-
-      // Пример редиректа на сайт в зависимости от цены
       if (price === 15) {
         window.location.href = 'https://site1.ru?email=' + email + '&nickname=' + nickname;
               } else if (price === 27) {
@@ -326,12 +307,10 @@ body {
         window.location.href = 'https://site3.ru?email=' + email + '&nickname=' + nickname;
       }
 
-      // Закрытие всплывающего окна
       closePopup();
     }
   });
 
-  // Назначаем обработчик для закрытия всплывающего окна при клике вне его
   overlay.addEventListener('click', function(event) {
     if (event.target === overlay) {
       closePopup();
@@ -344,6 +323,14 @@ body {
     event.preventDefault();
   });
 </script>
+
+  <div class="footer">
+    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215402865368104980/spb.png?ex=65fc9f20&is=65ea2a20&hm=bb4e3f200e34478a2bfd8e7ca439a81f1f57756733b02830c37f68a3fee3bc74&" alt="СБП">
+    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215402460177240144/Mir-logo.SVG.png?ex=65fc9ebf&is=65ea29bf&hm=76696918f4cff07cd244367fb05e5b7acb4d431f2aafafb2e6d638c00a155bab&" alt="МИР">
+    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215403143303536660/vbm_blu_2021.png?ex=65fc9f62&is=65ea2a62&hm=4597a9114e70e3ba07ccbeb98eb2e3f2bb9784c49338cb044e3005a8d60db2e4&" alt="VISA">
+    <img src="https://cdn.discordapp.com/attachments/1194165601485213768/1215403346975002655/mc_symbol.png?ex=65fc9f93&is=65ea2a93&hm=333e3b454a8cc0f35a8de7eaf0530d30ccb7d4ec034298f92cea2ff800743f7e&" alt="MasterCard">
+  </div>
+</div>
 
 </body>
 </html>
