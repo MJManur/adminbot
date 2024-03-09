@@ -193,6 +193,35 @@ body {
     <p class="price"><b>от 2379 РУБ</b></p>
   </div>
 
+    <div id="popup" class="popup">
+    <div class="popup-content">
+      <h2>Введите ник и email</h2>
+      <input type="text" placeholder="Ник на сервере">
+      <input type="text" placeholder="Email">
+      <button>Продолжить</button>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  
+  var openPopupButtons = document.querySelectorAll('.open-popup');
+  var popup = document.querySelector('.popup');
+
+  openPopupButtons.forEach(function(button) {
+    button.addEventListener('click', function() {
+      popup.classList.add('active');
+    });
+  });
+
+  var popupCloseButton = document.querySelector('.popup-content button');
+  popupCloseButton.addEventListener('click', function() {
+    popup.classList.remove('active');
+  });
+});
+</script>
+
   <div class="scrollbar"></div>
 </div>
 
