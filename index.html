@@ -128,13 +128,13 @@ body {
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.6);
+  z-index: 999;
 }
 
 .popup {
   background-color: rgba(0, 0, 0, 0.8);
   padding: 30px;
   box-shadow: 0 18px 40px -12px #FF1439;
-  z-index: 999;
 }
 
 .popup form {
@@ -257,35 +257,44 @@ body {
 <script>
   const products = document.querySelectorAll('.product');
   const popup = document.getElementById('popup');
-  
+
   products.forEach(function(product) {
-    product.addEventListener('click', function() {
+    product.addEventListener('click', function(event) {
+      event.stopPropagation();
       popup.classList.remove('hidden');
     });
-    
+
     product.addEventListener('mouseenter', function() {
       product.style.backgroundColor = '#99004d';
     });
-    
+
     product.addEventListener('mouseleave', function() {
       product.style.backgroundColor = 'transparent';
     });
   });
-  
+
+  popup.addEventListener('click', function(event) {
+    event.stopPropagation();
+  });
+
+  document.addEventListener('click', function() {
+    popup.classList.add('hidden');
+  });
+
   const form = document.querySelector('form');
-  
+
   form.addEventListener('submit', function(event) {
     event.preventDefault();
-    
+
     const price = document.querySelector('.product:hover .price').textContent;
     let url;
-    
+
     if (price.includes('15')) {
       url = 'https://example.com/15rub';
     } else if (price.includes('27')) {
       url = 'https://example.com/27rub';
     }
-    
+
     window.location.href = url;
   });
 </script>
