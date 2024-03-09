@@ -295,20 +295,22 @@ body {
 
   const form = document.querySelector('form');
 
-  form.addEventListener('submit', function(event) {
-    event.preventDefault();
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
 
-    const price = document.querySelector('.product:hover .price').textContent;
-    let url;
+  const price = document.querySelector('.product:hover .price').textContent;
+  let url;
 
-    if (price.includes('15')) {
-      url = 'https://example.com/15rub';
-    } else if (price.includes('27')) {
-      url = 'https://example.com/27rub';
-    }
+  if (price.includes('15')) {
+    url = 'https://example.com/15rub';
+  } else if (price.includes('27')) {
+    url = 'https://example.com/27rub';
+  }
 
-    window.location.href = url;
-  });
+  if (url) {
+    window.open(url, '_blank');
+  }
+});
 </script>
 
   <div class="footer">
