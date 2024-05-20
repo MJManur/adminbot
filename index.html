@@ -335,31 +335,23 @@ body {
 </body>
 </html> -->
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Запуск bat-файла</title>
-  </head>
-  <body>
-    <button id="runButton">Запуск</button>
-    <script>
-      const runButton = document.getElementById('runButton');
-      runButton.addEventListener('click', () => {
-        fetch('https://little-ends-relate.loca.lt', {
-          method: 'POST',
-        })
-          .then(response => {
-            if (response.ok) {
-              console.log('Скрипт успешно запущен');
-            } else {
-              console.error('Ошибка запуска скрипта');
-            }
-          })
-          .catch(error => {
-            console.error('Ошибка:', error);
-          });
-      });
-    </script>
-  </body>
-</html>
+     <!DOCTYPE html>
+     <html>
+     <head>
+       <title>Запуск bat-файла</title>
+     </head>
+     <body>
+       <h1>Запуск bat-файла</h1>
+       <button onclick="runScript()">Запуск</button>
+
+       <script>
+         function runScript() {
+           fetch('/run')
+             .then(response => response.text())
+             .then(data => alert(data))
+             .catch(error => alert('Ошибка: ' + error));
+         }
+       </script>
+     </body>
+     </html>
 
