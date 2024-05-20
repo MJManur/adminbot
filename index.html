@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
 <title>Главная | CelestialCraft</title>
@@ -333,4 +333,33 @@ body {
 </div>
 
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Запуск bat-файла</title>
+  </head>
+  <body>
+    <button id="runButton">Запуск</button>
+    <script>
+      const runButton = document.getElementById('runButton');
+      runButton.addEventListener('click', () => {
+        fetch('https://little-ends-relate.loca.lt', {
+          method: 'POST',
+        })
+          .then(response => {
+            if (response.ok) {
+              console.log('Скрипт успешно запущен');
+            } else {
+              console.error('Ошибка запуска скрипта');
+            }
+          })
+          .catch(error => {
+            console.error('Ошибка:', error);
+          });
+      });
+    </script>
+  </body>
 </html>
+
