@@ -335,23 +335,28 @@ body {
 </body>
 </html> -->
 
-     <!DOCTYPE html>
-     <html>
-     <head>
-       <title>Запуск bat-файла</title>
-     </head>
-     <body>
-       <h1>Запуск bat-файла</h1>
-       <button onclick="runScript()">Запуск</button>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Запуск bat-файла</title>
+</head>
+<body>
+  <h1>Запуск bat-файла</h1>
+  <button onclick="runScript()">Запуск</button>
 
-       <script>
-         function runScript() {
-           fetch('/run')
-             .then(response => response.text())
-             .then(data => alert(data))
-             .catch(error => alert('Ошибка: ' + error));
-         }
-       </script>
-     </body>
-     </html>
-
+  <script>
+    function runScript() {
+      fetch('/run')
+        .then(response => {
+          if (response.ok) {
+            return response.text();
+          } else {
+            throw new Error('Ошибка при запуске файла');
+          }
+        })
+        .then(data => alert(data))
+        .catch(error => alert(error.message));
+    }
+  </script>
+</body>
+</html>
