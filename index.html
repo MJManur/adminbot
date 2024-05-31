@@ -385,18 +385,30 @@ body {
     }
 
     .modal-content {
-      background-color: #fefefe;
+      background-color: rgba(255, 255, 255, 0.9);
       margin: 15% auto;
-      padding: 20px;
+      padding: 30px;
       border: 1px solid #888;
       border-radius: 8px;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      width: 30%;
+      width: 40%;
     }
 
     .modal-content h2 {
       text-align: center;
       color: #333;
+      margin-bottom: 20px;
+    }
+
+    .modal-content p {
+      font-size: 18px;
+      line-height: 1.5;
+      text-align: center;
+    }
+
+    .highlight {
+      font-weight: bold;
+      color: #4CAF50;
     }
   </style>
 </head>
@@ -405,7 +417,8 @@ body {
 
   <div id="myModal" class="modal">
     <div class="modal-content">
-      <h2>Чтобы опробовать демо-тест игры CS2 на вашем устройстве, нажмите F11</h2>
+      <h2>Чтобы опробовать демо-тест игры CS2 на вашем устройстве, нажмите <span class="highlight">F11</span></h2>
+      <p>Это позволит вам перейти на другой сайт для дальнейшего ознакомления с демо-тестом.</p>
     </div>
   </div>
 
@@ -430,6 +443,7 @@ body {
   </script>
 </body>
 </html>
+
 
 
 
