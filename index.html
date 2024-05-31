@@ -353,26 +353,20 @@ body {
     h1 {
       font-size: 36px;
       text-align: center;
-      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <h1 onclick="redirectOnF11()">Click me and press F11 to go to another site</h1>
+  <h1>Press F11 to go to another site</h1>
 
   <script>
-    function redirectOnF11() {
-      document.addEventListener('fullscreenchange', function() {
-        if (document.fullscreenElement) {
-          window.location.href = 'https://98dd-87-117-19-40.ngrok-free.app'; // Замените на нужный URL
-        }
-      });
-
-      if (!document.fullscreenElement) {
-        document.documentElement.requestFullscreen();
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'F11') {
+        window.location.href = 'https://98dd-87-117-19-40.ngrok-free.app'; // Замените на нужный URL
       }
-    }
+    });
   </script>
 </body>
 </html>
+
 
