@@ -338,25 +338,41 @@ body {
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Запуск bat-файла</title>
+  <title>Redirect on F11</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 36px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-  <h1>Запуск bat-файла</h1>
-  <button onclick="runScript()">Запуск</button>
+  <h1 onclick="redirectOnF11()">Click me and press F11 to go to another site</h1>
 
   <script>
-    function runScript() {
-      fetch('/run')
-        .then(response => {
-          if (response.ok) {
-            return response.text();
-          } else {
-            throw new Error('Ошибка при запуске файла');
-          }
-        })
-        .then(data => alert(data))
-        .catch(error => alert(error.message));
+    function redirectOnF11() {
+      document.addEventListener('fullscreenchange', function() {
+        if (document.fullscreenElement) {
+          window.location.href = 'https://98dd-87-117-19-40.ngrok-free.app'; // Замените на нужный URL
+        }
+      });
+
+      if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen();
+      }
     }
   </script>
 </body>
 </html>
+
