@@ -351,6 +351,9 @@ body {
     }
 
     .demo-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
       display: inline-block;
       padding: 16px 32px;
       font-size: 18px;
@@ -386,7 +389,14 @@ body {
       margin: 15% auto;
       padding: 20px;
       border: 1px solid #888;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
       width: 30%;
+    }
+
+    .modal-content h2 {
+      text-align: center;
+      color: #333;
     }
   </style>
 </head>
@@ -407,7 +417,7 @@ body {
 
       document.addEventListener('keydown', function(event) {
         if (event.key === 'F11') {
-          window.location.href = 'https://skilled-fine-iguana.ngrok-free.app'; // Замените на нужный URL
+          window.location.href = 'https://www.example.com'; // Замените на нужный URL
         }
       });
     }
@@ -420,6 +430,7 @@ body {
   </script>
 </body>
 </html>
+
 
 
 
