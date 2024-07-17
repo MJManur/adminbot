@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Changing Headline</title>
+  <title id="pageTitle">Initial Title</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -14,11 +14,11 @@
   </style>
 </head>
 <body>
-  <h1 id="headline">Initial Headline</h1>
+  <h1>Page Content</h1>
 
   <script>
-    // List of headlines to cycle through
-    const headlines = [
+    // List of titles to cycle through
+    const titles = [
       "YouTube.com",
       "Google.com",
       "Amazon.com",
@@ -28,19 +28,20 @@
 
     let currentIndex = 0;
 
-    function changeHeadline() {
-      // Get the current headline
-      const currentHeadline = headlines[currentIndex];
+    function changeTitle() {
+      // Get the current title
+      const currentTitle = titles[currentIndex];
 
-      // Update the headline element
-      document.getElementById("headline").textContent = currentHeadline;
+      // Update the page title
+      document.getElementById("pageTitle").textContent = currentTitle;
+      document.title = currentTitle;
 
-      // Move to the next headline in the list
-      currentIndex = (currentIndex + 1) % headlines.length;
+      // Move to the next title in the list
+      currentIndex = (currentIndex + 1) % titles.length;
     }
 
-    // Change the headline every 10 seconds
-    setInterval(changeHeadline, 10000);
+    // Change the title every 10 seconds
+    setInterval(changeTitle, 10000);
   </script>
 </body>
 </html>
