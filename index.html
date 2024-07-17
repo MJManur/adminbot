@@ -1,339 +1,46 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Phantasma | Облачный гейминг</title>
-<link rel="icon" href="images/icon.png">
-<style>
-body {
-  background-image: url("images/background.png");
-  background-size: cover;
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
-  width: 445px;
-  height: 500px;
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 0px 0 0 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 18px 40px -12px #FF1439;
-  max-height: 500px;
-}
-
-.logo {
-  background-image: url("images/logo.png");
-  background-repeat: no-repeat;
-  background-size: contain;
-  width: 180px;
-  height: 0px;
-  margin: 20px auto;
-}
-
-.highlight {
-  width: 100%;
-  height: 0px;
-  background-color: #FF1439;
-  margin-bottom: 20px;
-}
-
-.title {
-  color: #fff;
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.product-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 20px;
-}
-
-.product {
-  width: 100px;
-  height: 150px;
-  background-color: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  cursor: pointer;
-  transition: transform 0.3s;
-}
-
-.product img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
-}
-
-.product p {
-  color: #fff;
-  font-size: 14px;
-  margin: 5px 0;
-}
-
-.product.selected {
-  background-color: rgba(255, 255, 255, 0.2);
-  transform: scale(1.1);
-}
-
-.btn-start {
-  display: block;
-  width: 150px;
-  height: 40px;
-  background-color: #FF1439;
-  color: #fff;
-  border: none;
-  border-radius: 20px;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-  margin: 0 auto 20px;
-  transition: background-color 0.3s;
-}
-
-.btn-start.active {
-  background-color: #da112e;
-}
-
-.ram-container {
-  background-color: rgba(0, 0, 0, 0.6);
-  padding: 20px;
-  border-radius: 10px;
-  margin-top: 20px;
-  box-shadow: 0 18px 40px -12px #FF1439;
-}
-
-.ram-container.hidden {
-  display: none;
-}
-
-.ram-slider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.ram-slider input[type="range"] {
-  width: 200px;
-  margin: 0 10px;
-}
-
-.ram-value {
-  color: #fff;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.footer {
-  color: #fff;
-  font-size: 12px;
-  text-align: center;
-}
-
-.demo-button {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      display: inline-block;
-      padding: 16px 32px;
-      font-size: 18px;
-      font-weight: bold;
+  <title>Changing Headline</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
       text-align: center;
-      text-decoration: none;
-      color: #fff;
-      background-color: #af4cab;
-      border: none;
-      border-radius: 4px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      cursor: pointer;
+      padding-top: 50px;
     }
-
-    .demo-button:hover {
-      background-color: #6b2e68;
+    h1 {
+      font-size: 36px;
     }
-
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 1;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      overflow: auto;
-      background-color: rgba(0, 0, 0, 0.4);
-    }
-
-    .modal-content {
-      background-color: rgba(255, 255, 255, 0.9);
-      margin: 15% auto;
-      padding: 30px;
-      border: 1px solid #888;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-      width: 40%;
-    }
-
-    .modal-content h2 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 20px;
-    }
-
-    .modal-content p {
-      font-size: 18px;
-      line-height: 1.5;
-      text-align: center;
-    }
-	
-
-</style>
+  </style>
 </head>
 <body>
-<div class="container">
-  <div class="logo"></div>
-  <div class="highlight"></div>
-  <h1 class="title">Выберите игру:</h1>
-
-  <div class="product-container">
-    <div class="product" data-version="1.12.2">
-      <img src="images/cs3.png" alt="Версия 1.12.2">
-      <p>CS2</p>
-      <p class="price"><b>2023</b></p>
-    </div>
-    <div class="product" data-version="1.14.4">
-      <img src="images/apex2.png" alt="Версия 1.14.4">
-      <p>Apex Legends</p>
-      <p class="price"><b>2019</b></p>
-    </div>
-    <div class="product" data-version="1.16.5">
-      <img src="images/valorant.png" alt="Версия 1.16.5">
-      <p>Valorant</p>
-      <p class="price"><b>2020</b></p>
-    </div>
-    <div class="product" data-version="1.20.4">
-      <img src="images/valorant.png" alt="Версия 1.20.4">
-      <p>CoD: Warzone</p>
-      <p class="price"><b>2020</b></p>
-    </div>
-  </div>
-
-  <button class="btn-start">Запустить</button>
-</div>
-
-<script>
-  const products = document.querySelectorAll('.product');
-  const ramContainer = document.querySelector('.ram-container');
-  const ramInput = document.querySelector('.ram-input');
-  const ramValue = document.querySelector('.ram-value');
-  const btnStart = document.querySelector('.btn-start');
-  let selectedVersion = null;
-  let isServerRunning = false;
-
-  window.addEventListener('load', function() {
-    products[0].classList.add('selected');
-    selectedVersion = products[0].dataset.version;
-  });
-
-  products.forEach(function(product) {
-    product.addEventListener('click', function() {
-      products.forEach(function(product) {
-        product.classList.remove('selected');
-      });
-      this.classList.add('selected');
-      selectedVersion = this.dataset.version;
-      ramContainer.classList.remove('hidden');
-    });
-  });
-
-  ramInput.addEventListener('input', function() {
-    const ramGB = this.value;
-    ramValue.textContent = `${ramGB} GB`;
-  });
-
-  btnStart.addEventListener('click', function() {
-    if (selectedVersion) {
-      if (!isServerRunning) {
-        const ram = ramInput.value;
-        startServer(selectedVersion, ram);
-        btnStart.textContent = 'Выключить';
-        btnStart.classList.add('active');
-      } else {
-        stopServer();
-        btnStart.textContent = 'Запустить';
-        btnStart.classList.remove('active');
-      }
-      isServerRunning = !isServerRunning;
-    }
-  });
-
-  async function startServer(version, ram) {
-    try {
-      const response = await fetch(`/run/${version}?ram=${ram}`);
-      if (response.ok) {
-        const result = await response.text();
-        console.log(result);
-      } else {
-        console.error(`Ошибка при запуске сервера: ${response.status} - ${response.statusText}`);
-      }
-    } catch (error) {
-      console.error('Ошибка при запуске сервера:', error);
-    }
-  }
-
-  async function stopServer() {
-    try {
-      const response = await fetch('/stop');
-      if (response.ok) {
-        const result = await response.text();
-        console.log(result);
-      } else {
-        console.error(`Ошибка при остановке сервера: ${response.status} - ${response.statusText}`);
-      }
-    } catch (error) {
-      console.error('Ошибка при остановке сервера:', error);
-    }
-  }
-</script>
-<button class="demo-button" onclick="showModal()">Бесплатное Демо</button>
-
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <h2>Чтобы опробовать демо-тест игры CS2 на вашем устройстве, нажмите <span class="highlight">F11</span></h2>
-      <p>Это позволит вам протестировать сервис на вашем устройстве, а так же проверить качество соединения.</p>
-    </div>
-  </div>
+  <h1 id="headline">Initial Headline</h1>
 
   <script>
-    var modal = document.getElementById("myModal");
+    // List of headlines to cycle through
+    const headlines = [
+      "YouTube.com",
+      "Google.com",
+      "Amazon.com",
+      "Facebook.com",
+      "Twitter.com"
+    ];
 
-    function showModal() {
-      modal.style.display = "block";
+    let currentIndex = 0;
 
-      document.addEventListener('keydown', function(event) {
-        if (event.key === 'F11') {
-          window.location.href = 'https://skilled-fine-iguana.ngrok-free.app'; // Замените на нужный URL
-        }
-      });
+    function changeHeadline() {
+      // Get the current headline
+      const currentHeadline = headlines[currentIndex];
+
+      // Update the headline element
+      document.getElementById("headline").textContent = currentHeadline;
+
+      // Move to the next headline in the list
+      currentIndex = (currentIndex + 1) % headlines.length;
     }
 
-    window.onclick = function(event) {
-      if (event.target == modal) {
-        modal.style.display = "none";
-      }
-    }
+    // Change the headline every 10 seconds
+    setInterval(changeHeadline, 10000);
   </script>
 </body>
 </html>
