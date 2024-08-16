@@ -17,7 +17,7 @@
       width: 50px;
       height: 300px;
       margin: 0 20px;
-      background: linear-gradient(to bottom, #f44336, #e91e63, #9c27b0, #673ab7, #3f51b5, #2196f3, #03a9f4, #00bcd4, #009688, #4caf50, #8bc34a, #cddc39, #ffeb3b, #ffc107, #ff9800, #ff5722);
+      background: linear-gradient(to bottom, #ff5722, #ffc107, #4caf50);
       border-radius: 25px;
       position: relative;
       overflow: hidden;
@@ -30,8 +30,8 @@
       border-radius: 10px;
       position: absolute;
       left: 0;
-      bottom: 0;
       cursor: pointer;
+      transition: bottom 0.3s ease;
     }
   </style>
 </head>
@@ -47,5 +47,61 @@
       <div class="fader-handle"></div>
     </div>
   </div>
+
+  <script>
+    const faderHandles = document.querySelectorAll('.fader-handle');
+
+    faderHandles.forEach(handle => {
+      let isDragging = false;
+      let currentY;
+      let initialY;
+      let offsetY;
+      let initialPosition;
+      let containerHeight = 300;
+
+      handle.addEventListener('mousedown', dragStart);
+      handle.addEventListener('mouseup', dragEnd);
+      handle.addEventListener('mousemove', drag);
+
+      function dragStart(e) {
+        initialY = e.clientY - offsetY;
+        initialPosition = window.pageYOffset;
+
+        if (e.type === 'touchstart') {
+          initialY = e.touches[0].clientY - offsetY;
+        }
+
+        isDragging = true;
+      }
+
+      function dragEnd(e) {
+        initialY = currentY;
+        isDragging = false;
+      }
+
+      function drag(e) {
+        if (isDragging) {
+          e.preventDefault();
+
+          if (e.type === 'touchmove') {
+            currentY = e.touches[0].clientY - initialY;
+          } else {
+            currentY = e.clientY - initialY;
+          }
+
+          offsetY = currentY - initialY;
+
+          let bottomPosition = containerHeight - handle.offsetHeight;
+          if (offsetY > bottomPosition) {
+            offsetY = bottomPosition;
+          } else if (offsetY < 0) {
+            offsetY = 0;
+          }
+
+          handle.style.bottom = offsetY + 'px';
+        }
+      }
+    });
+  </script>
 </body>
 </html>
