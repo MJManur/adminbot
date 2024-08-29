@@ -3,105 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vertical Mixer Faders</title>
+  <title>My Website</title>
   <style>
-    .mixer-container {
-      display: flex;
-      justify-content: center;
-      align-items: flex-end;
-      height: 100vh;
-      background-color: #333;
-    }
-
-    .mixer-fader {
+    /* Стили для кнопки авторизации */
+    .auth-button {
+      position: fixed;
+      top: 10px;
+      right: 10px;
       width: 50px;
-      height: 300px;
-      margin: 0 20px;
-      background: linear-gradient(to bottom, #ff5722, #ffc107, #4caf50);
-      border-radius: 25px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .fader-handle {
-      width: 50px;
-      height: 20px;
-      background-color: #ccc;
-      border-radius: 10px;
-      position: absolute;
-      left: 0;
+      height: 50px;
+      background-image: url('images/sits_landing.png');
+      background-size: cover;
       cursor: pointer;
-      transition: bottom 0.3s ease;
     }
   </style>
 </head>
 <body>
-  <div class="mixer-container">
-    <div class="mixer-fader">
-      <div class="fader-handle"></div>
-    </div>
-    <div class="mixer-fader">
-      <div class="fader-handle"></div>
-    </div>
-    <div class="mixer-fader">
-      <div class="fader-handle"></div>
-    </div>
-  </div>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <div class="auth-button" onclick="window.location.href = 'http://localhost:3000/auth/steam';"></div>
+  </header>
+
+  <main>
+    <p>This is the content of the website.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2023 My Website</p>
+  </footer>
 
   <script>
-    const faderHandles = document.querySelectorAll('.fader-handle');
-
-    faderHandles.forEach(handle => {
-      let isDragging = false;
-      let currentY;
-      let initialY;
-      let offsetY;
-      let initialPosition;
-      let containerHeight = 300;
-
-      handle.addEventListener('mousedown', dragStart);
-      handle.addEventListener('mouseup', dragEnd);
-      handle.addEventListener('mousemove', drag);
-
-      function dragStart(e) {
-        initialY = e.clientY - offsetY;
-        initialPosition = window.pageYOffset;
-
-        if (e.type === 'touchstart') {
-          initialY = e.touches[0].clientY - offsetY;
-        }
-
-        isDragging = true;
-      }
-
-      function dragEnd(e) {
-        initialY = currentY;
-        isDragging = false;
-      }
-
-      function drag(e) {
-        if (isDragging) {
-          e.preventDefault();
-
-          if (e.type === 'touchmove') {
-            currentY = e.touches[0].clientY - initialY;
-          } else {
-            currentY = e.clientY - initialY;
-          }
-
-          offsetY = currentY - initialY;
-
-          let bottomPosition = containerHeight - handle.offsetHeight;
-          if (offsetY > bottomPosition) {
-            offsetY = bottomPosition;
-          } else if (offsetY < 0) {
-            offsetY = 0;
-          }
-
-          handle.style.bottom = offsetY + 'px';
-        }
-      }
-    });
+    // Здесь можно добавить дополнительный JavaScript-код для вашего сайта
   </script>
 </body>
 </html>
