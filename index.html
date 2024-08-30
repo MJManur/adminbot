@@ -81,6 +81,11 @@
       background-color: #45a049;
     }
 
+    .header__login #user-info {
+      display: flex;
+      align-items: center;
+    }
+
     .hero {
       background-image: url('hero-bg.jpg');
       background-size: cover;
@@ -172,50 +177,70 @@
     <nav class="header__nav">
       <a href="#" class="active">Продать скины</a>
       <a href="#">Купить скины</a>
+      
       <a href="#">FAQ</a>
       <a href="#">Промокоды</a>
     </nav>
     <div class="header__login">
+      <div id="user-info" style="display: none;">
+        <img id="user-avatar" src="" alt="User Avatar" style="height: 30px; border-radius: 50%; margin-right: 10px;">
+        <span id="user-display-name"></span>
+      </div>
       <a href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
-      <button>
-        
-        <img src="images/steam_logo.png" alt="Steam">
-        Войти через Steam
-      </button>
+        <button>
+          <img src="images/steam_logo.png" alt="Steam">
+          Войти через Steam
+        </button>
       </a>
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Продай свои скины CS2 выгодно!</h1>
-    <p>Быстрый и безопасный обмен скинов на деньги</p>
-    <a href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
-    <button>Начать продажу</button>
-    </a>
-  </section>
+  <div class="hero">
+    <h1>Добро пожаловать на MJMoney!</h1>
+    <p>Безопасная и удобная продажа скинов для CS2</p>
+    <button>Начать</button>
+  </div>
 
-  <section class="features">
+  <div class="features">
     <div class="feature">
-      <img src="images/time2.png" alt="Быстро">
-      <h3>Быстро</h3>
-      <p>Мгновенный обмен скинов на деньги</p>
+      <img src="images/feature1.png" alt="Feature 1">
+      <h3>Безопасные сделки</h3>
+      <p>Все транзакции проходят через безопасный сервер, гарантирующий защиту ваших средств.</p>
     </div>
     <div class="feature">
-      <img src="images/shield2.png" alt="Безопасно">
-      <h3>Безопасно</h3>
-      <p>Надежная система защиты ваших данных</p>
+      <img src="images/feature2.png" alt="Feature 2">
+      <h3>Быстрый вывод</h3>
+      <p>Получайте деньги от продажи скинов в течение 24 часов после подтверждения сделки.</p>
     </div>
     <div class="feature">
-      <img src="images/profit2.png" alt="Выгодно">
-      <h3>Выгодно</h3>
-      <p>Максимальные цены на ваши скины</p>
+      <img src="images/feature3.png" alt="Feature 3">
+      <h3>Огромный ассортимент</h3>
+      <p>Большой выбор скинов на любой вкус и бюджет.</p>
     </div>
-  </section>
+  </div>
 
   <footer class="footer">
-    <p>&copy; 2024 MJMoney. Все права защищены.</p>
-    <p>Сайт <a href="#">MJMoney</a> никак не относится к Valve Corp.</p>
+    <p>&copy; 2023 MJMoney. Все права защищены.</p>
+    <a href="#">Политика конфиденциальности</a>
   </footer>
+
+  <script>
+    // Извлекаем параметры из URL
+    const urlParams = new URLSearchParams(window.location.hash.slice(1));
+    const displayName = urlParams.get('displayName');
+    const avatar = urlParams.get('avatar');
+
+    // Отображаем информацию пользователя
+    if (displayName && avatar) {
+      const userInfoElement = document.getElementById('user-info');
+      const userAvatarElement = document.getElementById('user-avatar');
+      const userDisplayNameElement = document.getElementById('user-display-name');
+
+      userAvatarElement.src = avatar;
+      userDisplayNameElement.textContent = displayName;
+      userInfoElement.style.display = 'flex';
+    }
+  </script>
 </body>
 </html>
 
