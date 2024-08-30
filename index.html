@@ -5,16 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Skin Trade</title>
   <style>
-    /* Общие стили */
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #f0f0f0;
     }
 
-    /* Верхний блок с кнопками */
     .header {
-      background-color: #333;
+      background-color: #1e1e1e;
       color: #fff;
       padding: 20px;
       display: flex;
@@ -24,6 +23,7 @@
 
     .header__logo {
       height: 40px;
+      margin-right: 20px;
     }
 
     .header__nav {
@@ -40,11 +40,11 @@
     }
 
     .header__nav a.active {
-      background-color: #555;
+      background-color: #333;
     }
 
     .header__nav a:hover {
-      background-color: #555;
+      background-color: #333;
     }
 
     .header__social {
@@ -85,6 +85,8 @@
       font-size: 16px;
       cursor: pointer;
       border-radius: 4px;
+      display: flex;
+      align-items: center;
     }
 
     .header__login button:hover {
@@ -107,8 +109,10 @@
       <a href="https://www.telegram.org" target="_blank"><img src="telegram.png" alt="Telegram"></a>
     </div>
     <div class="header__login">
-      <img src="steam.png" alt="Steam">
-      <button>Войти через Стим</button>
+      <button>
+        <img src="steam.png" alt="Steam">
+        Войти через Стим
+      </button>
     </div>
   </header>
 </body>
