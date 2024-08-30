@@ -3,37 +3,113 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Website</title>
+  <title>Skin Trade</title>
   <style>
-    /* Стили для кнопки авторизации */
-    .auth-button {
-      position: fixed;
-      top: 10px;
-      right: 110px; /* Было right: 10px, теперь right: 110px */
-      width: 50px;
-      height: 50px;
-      background-image: url('images/sits_landing.png');
-      background-size: cover;
+    /* Общие стили */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Верхний блок с кнопками */
+    .header {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .header__logo {
+      height: 40px;
+    }
+
+    .header__nav {
+      display: flex;
+      align-items: center;
+    }
+
+    .header__nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 20px;
+      padding: 10px;
+      transition: background-color 0.3s;
+    }
+
+    .header__nav a.active {
+      background-color: #555;
+    }
+
+    .header__nav a:hover {
+      background-color: #555;
+    }
+
+    .header__social {
+      display: flex;
+      align-items: center;
+    }
+
+    .header__social a {
+      color: #fff;
+      text-decoration: none;
+      margin-right: 10px;
+    }
+
+    .header__social a:hover {
+      color: #ccc;
+    }
+
+    .header__social img {
+      height: 30px;
+    }
+
+    .header__login {
+      display: flex;
+      align-items: center;
+    }
+
+    .header__login img {
+      height: 20px;
+      margin-right: 5px;
+    }
+
+    .header__login button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
       cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .header__login button:hover {
+      background-color: #45a049;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Welcome to My Website</h1>
-    <div class="auth-button" onclick="window.location.href = 'https://skilled-fine-iguana.ngrok-free.app/auth/steam';"></div>
+  <header class="header">
+    <img src="logo.png" alt="Site Logo" class="header__logo">
+    <nav class="header__nav">
+      <a href="#" class="active">Продать скины</a>
+      <a href="#">Купить скины</a>
+      <a href="#">FAQ</a>
+      <a href="#">Промокоды</a>
+    </nav>
+    <div class="header__social">
+      <a href="https://www.tiktok.com" target="_blank"><img src="tiktok.png" alt="TikTok"></a>
+      <a href="https://www.youtube.com" target="_blank"><img src="youtube.png" alt="YouTube"></a>
+      <a href="https://www.telegram.org" target="_blank"><img src="telegram.png" alt="Telegram"></a>
+    </div>
+    <div class="header__login">
+      <img src="steam.png" alt="Steam">
+      <button>Войти через Стим</button>
+    </div>
   </header>
-
-  <main>
-    <p>This is the content of the website.</p>
-  </main>
-
-  <footer>
-    <p>&copy; 2023 My Website</p>
-  </footer>
-
-  <script>
-    // Здесь можно добавить дополнительный JavaScript-код для вашего сайта
-  </script>
 </body>
 </html>
