@@ -176,12 +176,15 @@
       <a href="#">Промокоды</a>
     </nav>
     <div class="header__login">
-      <a href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
-      <button>
-        
-        <img src="images/steam_logo.png" alt="Steam">
-        Войти через Steam
-      </button>
+      <div id="user-info" style="display: none;">
+        <img id="user-avatar" src="" alt="User Avatar" style="height: 30px; border-radius: 50%; margin-right: 10px;">
+        <span id="user-display-name"></span>
+      </div>
+      <a id="steam-login-link" href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
+        <button>
+          <img src="images/steam_logo.png" alt="Steam">
+          Войти через Steam
+        </button>
       </a>
     </div>
   </header>
@@ -216,7 +219,8 @@
     <p>&copy; 2024 MJMoney. Все права защищены.</p>
     <p>Сайт <a href="#">MJMoney</a> никак не относится к Valve Corp.</p>
   </footer>
-    <script>
+
+  <script>
     // Извлекаем параметры из URL
     const urlParams = new URLSearchParams(window.location.hash.slice(1));
     const displayName = urlParams.get('displayName');
@@ -227,10 +231,12 @@
       const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
+      const steamLoginLinkElement = document.getElementById('steam-login-link');
 
       userAvatarElement.src = avatar;
       userDisplayNameElement.textContent = displayName;
       userInfoElement.style.display = 'flex';
+      steamLoginLinkElement.style.display = 'none'; // Скрываем кнопку "Войти через Steam"
     }
   </script>
 </body>
