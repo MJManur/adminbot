@@ -164,6 +164,12 @@
     .footer a:hover {
       color: #45a049;
     }
+    .hero,
+    .features,
+    .footer {
+      display: block;
+    }
+
     .exchange-section {
       display: none;
       padding: 20px;
@@ -276,12 +282,15 @@
 
     // Отображаем информацию пользователя
     if (displayName && avatar) {
-      const userInfoElement = document.getElementById('user-info');
       
+      const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
       const userBalanceElement = document.getElementById('user-balance');
       const steamLoginLinkElement = document.getElementById('steam-login-link');
+      const heroElement = document.querySelector('.hero');
+      const featuresElement = document.querySelector('.features');
+      const footerElement = document.querySelector('.footer');
       const exchangeSection = document.querySelector('.exchange-section');
 
       userAvatarElement.src = avatar;
@@ -289,6 +298,9 @@
       userBalanceElement.textContent = '0.00 ₽ (0.00 $)';
       userInfoElement.style.display = 'flex';
       steamLoginLinkElement.style.display = 'none';
+      heroElement.style.display = 'none';
+      featuresElement.style.display = 'none';
+      footerElement.style.display = 'none';
       exchangeSection.style.display = 'block';
     }
   </script>
