@@ -165,12 +165,21 @@
       color: #45a049;
     }
     .hero,
-    .features,
-    .footer {
-      display: block;
+    .features {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
     }
 
-    .exchange-section {
+    .feature {
+      flex: 1 1 30%;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .exchange-section,
+    .inventory-section {
       display: none;
       padding: 20px;
       background-color: #1e1e1e;
@@ -178,7 +187,8 @@
       margin-top: 20px;
     }
 
-    .exchange-section h2 {
+    .exchange-section h2,
+    .inventory-section h2 {
       margin-top: 0;
     }
 
@@ -192,7 +202,8 @@
       font-size: 16px;
     }
 
-    .exchange-section button {
+    .exchange-section button,
+    .inventory-section button {
       background-color: #4CAF50;
       color: #fff;
       border: none;
@@ -208,8 +219,36 @@
       margin-top: 10px;
     }
 
-    .exchange-section button:hover {
+    .exchange-section button:hover,
+    .inventory-section button:hover {
       background-color: #45a049;
+    }
+
+    .inventory-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 10px;
+    }
+
+    .inventory-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2e2e2e;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .inventory-item img {
+      max-width: 80px;
+      max-height: 80px;
+      margin-bottom: 5px;
+    }
+
+    .inventory-item span {
+      font-size: 14px;
+      color: #ccc;
     }
   </style>
 </head>
@@ -259,6 +298,7 @@
     <div class="feature">
       <img src="images/profit2.png" alt="Выгодно">
       <h3>Выгодно</h3>
+      
       <p>Максимальные цены на ваши скины</p>
     </div>
   </section>
@@ -266,6 +306,14 @@
   <div class="exchange-section">
     <h2>Обмен</h2>
     <input type="text" placeholder="Введите ссылку на обмен">
+    <button>Получить ссылку на обмен</button>
+  </div>
+
+  <div class="inventory-section">
+    <h2>Ваш инвентарь</h2>
+    <div class="inventory-items">
+      <!-- Здесь будут отображаться предметы из инвентаря -->
+    </div>
     <button>Обменять</button>
   </div>
 
@@ -282,7 +330,6 @@
 
     // Отображаем информацию пользователя
     if (displayName && avatar) {
-      
       const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
@@ -290,18 +337,18 @@
       const steamLoginLinkElement = document.getElementById('steam-login-link');
       const heroElement = document.querySelector('.hero');
       const featuresElement = document.querySelector('.features');
-      const footerElement = document.querySelector('.footer');
       const exchangeSection = document.querySelector('.exchange-section');
+      const inventorySection = document.querySelector('.inventory-section');
 
       userAvatarElement.src = avatar;
       userDisplayNameElement.textContent = displayName;
-      userBalanceElement.textContent = ' 0.00 ₽ (0.00 $)';
+      userBalanceElement.textContent = '0.00 ₽ (0.00 $)';
       userInfoElement.style.display = 'flex';
       steamLoginLinkElement.style.display = 'none';
       heroElement.style.display = 'none';
       featuresElement.style.display = 'none';
-      footerElement.style.display = 'none';
       exchangeSection.style.display = 'block';
+      inventorySection.style.display = 'block';
     }
   </script>
 </body>
