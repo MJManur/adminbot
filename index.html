@@ -164,6 +164,86 @@
     .footer a:hover {
       color: #45a049;
     }
+    .inventory-section {
+      display: none;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .inventory-section h2 {
+      margin-top: 0;
+    }
+
+    .inventory-items {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      grid-gap: 10px;
+    }
+
+    .inventory-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #2e2e2e;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .inventory-item img {
+      max-width: 80px;
+      max-height: 80px;
+      margin-bottom: 5px;
+    }
+
+    .inventory-item span {
+      font-size: 14px;
+      color: #ccc;
+    }
+
+    .exchange-section {
+      display: none;
+      padding: 20px;
+      background-color: #1e1e1e;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    .exchange-section h2 {
+      margin-top: 0;
+    }
+
+    .exchange-section input {
+      width: 100%;
+      padding: 10px;
+      background-color: #2e2e2e;
+      border: none;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 16px;
+    }
+
+    .exchange-section button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-decoration: none;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      transition: background-color 0.3s;
+      margin-top: 10px;
+    }
+
+    .exchange-section button:hover {
+      background-color: #45a049;
+    }
   </style>
 </head>
 <body>
@@ -179,8 +259,9 @@
       <div id="user-info" style="display: none;">
         <img id="user-avatar" src="" alt="User Avatar" style="height: 30px; border-radius: 50%; margin-right: 10px;">
         <span id="user-display-name"></span>
+        <span id="user-balance">0.00 ₽ (0.00 $)</span>
       </div>
-      <a id="steam-login-link" href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
+      <a id="login-button" href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
         <button>
           <img src="images/steam_logo.png" alt="Steam">
           Войти через Steam
@@ -189,36 +270,18 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h1>Продай свои скины CS2 выгодно!</h1>
-    <p>Быстрый и безопасный обмен скинов на деньги</p>
-    <a href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
-    <button>Начать продажу</button>
-    </a>
-  </section>
+  <div class="inventory-section">
+    <h2>Ваш инвентарь</h2>
+    <div class="inventory-items">
+      <!-- Здесь будут отображаться предметы из инвентаря -->
+    </div>
+  </div>
 
-  <section class="features">
-    <div class="feature">
-      <img src="images/time2.png" alt="Быстро">
-      <h3>Быстро</h3>
-      <p>Мгновенный обмен скинов на деньги</p>
-    </div>
-    <div class="feature">
-      <img src="images/shield2.png" alt="Безопасно">
-      <h3>Безопасно</h3>
-      <p>Надежная система защиты ваших данных</p>
-    </div>
-    <div class="feature">
-      <img src="images/profit2.png" alt="Выгодно">
-      <h3>Выгодно</h3>
-      <p>Максимальные цены на ваши скины</p>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <p>&copy; 2024 MJMoney. Все права защищены.</p>
-    <p>Сайт <a href="#">MJMoney</a> никак не относится к Valve Corp.</p>
-  </footer>
+  <div class="exchange-section">
+    <h2>Обмен</h2>
+    <input type="text" placeholder="Введите ссылку на обмен">
+    <button>Обменять</button>
+  </div>
 
   <script>
     // Извлекаем параметры из URL
@@ -231,13 +294,21 @@
       const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
-      const steamLoginLinkElement = document.getElementById('steam-login-link');
+      
+      const userBalanceElement = document.getElementById('user-balance');
+      const loginButtonElement = document.getElementById('login-button');
+      const inventorySection = document.querySelector('.inventory-section');
+      const exchangeSection = document.querySelector('.exchange-section');
 
       userAvatarElement.src = avatar;
       userDisplayNameElement.textContent = displayName;
+      userBalanceElement.textContent = '0.00 ₽ (0.00 $)';
       userInfoElement.style.display = 'flex';
-      steamLoginLinkElement.style.display = 'none'; // Скрываем кнопку "Войти через Steam"
+      loginButtonElement.style.display = 'none';
+      inventorySection.style.display = 'block';
+      exchangeSection.style.display = 'block';
     }
   </script>
 </body>
 </html>
+
