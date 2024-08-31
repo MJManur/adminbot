@@ -226,7 +226,7 @@
       <div id="user-info" style="display: none;">
         <img id="user-avatar" src="" alt="User Avatar" style="height: 30px; border-radius: 50%; margin-right: 10px;">
         <span id="user-display-name"></span>
-        <span id="user-balance">0.00 ₽ (0.00 $)</span>
+        <span id="user-balance">&nbsp;0.00 ₽ (0.00 $)</span>
       </div>
       <a id="steam-login-link" href="https://skilled-fine-iguana.ngrok-free.app/auth/steam">
         <button>
@@ -295,7 +295,7 @@
 
       userAvatarElement.src = avatar;
       userDisplayNameElement.textContent = displayName;
-      userBalanceElement.textContent = '&nbsp;0.00 ₽ (0.00 $)';
+      userBalanceElement.textContent = '0.00 ₽ (0.00 $)';
       userInfoElement.style.display = 'flex';
       steamLoginLinkElement.style.display = 'none';
       heroElement.style.display = 'none';
