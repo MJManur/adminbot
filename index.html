@@ -164,7 +164,8 @@
     .footer a:hover {
       color: #45a049;
     }
-    .inventory-section {
+    .inventory-section,
+    .exchange-section {
       display: none;
       padding: 20px;
       background-color: #1e1e1e;
@@ -172,7 +173,8 @@
       margin-top: 20px;
     }
 
-    .inventory-section h2 {
+    .inventory-section h2,
+    .exchange-section h2 {
       margin-top: 0;
     }
 
@@ -201,18 +203,6 @@
     .inventory-item span {
       font-size: 14px;
       color: #ccc;
-    }
-
-    .exchange-section {
-      display: none;
-      padding: 20px;
-      background-color: #1e1e1e;
-      border-radius: 10px;
-      margin-top: 20px;
-    }
-
-    .exchange-section h2 {
-      margin-top: 0;
     }
 
     .exchange-section input {
@@ -270,7 +260,32 @@
     </div>
   </header>
 
+  <div class="hero">
+    <h1>Добро пожаловать на MJMoney!</h1>
+    <p>Безопасная и удобная продажа скинов для CS2</p>
+    <button>Начать</button>
+  </div>
+
+  <div class="features">
+    <div class="feature">
+      <img src="images/feature1.png" alt="Feature 1">
+      <h3>Безопасные сделки</h3>
+      <p>Все транзакции проходят через безопасный сервер, гарантирующий защиту ваших средств.</p>
+    </div>
+    <div class="feature">
+      <img src="images/feature2.png" alt="Feature 2">
+      <h3>Быстрый вывод</h3>
+      <p>Получайте деньги от продажи скинов в течение 24 часов после подтверждения сделки.</p>
+    </div>
+    <div class="feature">
+      <img src="images/feature3.png" alt="Feature 3">
+      <h3>Огромный ассортимент</h3>
+      <p>Большой выбор скинов на любой вкус и бюджет.</p>
+    </div>
+  </div>
+
   <div class="inventory-section">
+
     <h2>Ваш инвентарь</h2>
     <div class="inventory-items">
       <!-- Здесь будут отображаться предметы из инвентаря -->
@@ -283,6 +298,11 @@
     <button>Обменять</button>
   </div>
 
+  <footer class="footer">
+    <p>&copy; 2023 MJMoney. Все права защищены.</p>
+    <a href="#">Политика конфиденциальности</a>
+  </footer>
+
   <script>
     // Извлекаем параметры из URL
     const urlParams = new URLSearchParams(window.location.hash.slice(1));
@@ -294,7 +314,6 @@
       const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
-      
       const userBalanceElement = document.getElementById('user-balance');
       const loginButtonElement = document.getElementById('login-button');
       const inventorySection = document.querySelector('.inventory-section');
@@ -311,4 +330,3 @@
   </script>
 </body>
 </html>
-
