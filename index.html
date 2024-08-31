@@ -6,180 +6,14 @@
   <title>MJMoney - Продажа скинов CS2</title>
   <link rel="icon" type="image/png" href="images/favicon.png">
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
-
-    body {
-      font-family: 'Montserrat', Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #141414;
-      color: #fff;
-    }
-
-    .header {
-      background-color: #1e1e1e;
-      padding: 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .header__logo {
-      height: 50px;
-      margin-right: 40px;
-    }
-
-    .header__nav {
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-    }
-
-    .header__nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-right: 20px;
-      padding: 10px 15px;
-      transition: background-color 0.3s;
-      border-radius: 20px;
-    }
-
-    .header__nav a.active {
-      background-color: #4CAF50;
-    }
-
-    .header__nav a:hover {
-      background-color: #45a049;
-    }
-
-    .header__login {
-      display: flex;
-      align-items: center;
-    }
-
-    .header__login img {
-      height: 20px;
-      margin-right: 5px;
-    }
-
-    .header__login button {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      padding: 10px 20px;
-      text-decoration: none;
-      font-size: 16px;
-      cursor: pointer;
-      border-radius: 20px;
-      display: flex;
-      align-items: center;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .header__login button:hover {
-      background-color: #45a049;
-    }
-
-    .hero {
-      background-image: url('hero-bg.jpg');
-      background-size: cover;
-      background-position: center;
-      padding: 100px 20px;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero p {
-      font-size: 24px;
-      margin-bottom: 40px;
-      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
-
-    .hero button {
-      background-color: #4CAF50;
-      color: #fff;
-      border: none;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 18px;
-      cursor: pointer;
-      border-radius: 30px;
-      font-weight: bold;
-      transition: background-color 0.3s;
-    }
-
-    .hero button:hover {
-      background-color: #45a049;
-    }
-
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 40px;
-      padding: 60px 20px;
-    }
-
-    .feature {
-      text-align: center;
-    }
-
-    .feature img {
-      height: 80px;
-      margin-bottom: 20px;
-    }
-
-    .feature h3 {
-      font-size: 24px;
-      margin-bottom: 10px;
-    }
-
-    .feature p {
-      font-size: 16px;
-      color: #ccc;
-    }
-
-    .footer {
-      background-color: #1e1e1e;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    .footer p {
-      font-size: 14px;
-      color: #ccc;
-      margin-bottom: 10px;
-    }
-
-    .footer a {
-      color: #4CAF50;
-      text-decoration: none;
-    }
-
-    .footer a:hover {
-      color: #45a049;
-    }
+    /* Ваши стили CSS */
     .hero,
-    .features {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
+    .features,
+    .footer {
+      display: block;
     }
 
-    .feature {
-      flex: 1 1 30%;
-      text-align: center;
-      margin: 20px;
-    }
-
-    .exchange-section,
-    .inventory-section {
+    .exchange-section {
       display: none;
       padding: 20px;
       background-color: #1e1e1e;
@@ -187,8 +21,7 @@
       margin-top: 20px;
     }
 
-    .exchange-section h2,
-    .inventory-section h2 {
+    .exchange-section h2 {
       margin-top: 0;
     }
 
@@ -202,8 +35,7 @@
       font-size: 16px;
     }
 
-    .exchange-section button,
-    .inventory-section button {
+    .exchange-section button {
       background-color: #4CAF50;
       color: #fff;
       border: none;
@@ -219,36 +51,8 @@
       margin-top: 10px;
     }
 
-    .exchange-section button:hover,
-    .inventory-section button:hover {
+    .exchange-section button:hover {
       background-color: #45a049;
-    }
-
-    .inventory-items {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-      grid-gap: 10px;
-    }
-
-    .inventory-item {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      background-color: #2e2e2e;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .inventory-item img {
-      max-width: 80px;
-      max-height: 80px;
-      margin-bottom: 5px;
-    }
-
-    .inventory-item span {
-      font-size: 14px;
-      color: #ccc;
     }
   </style>
 </head>
@@ -305,14 +109,6 @@
   <div class="exchange-section">
     <h2>Обмен</h2>
     <input type="text" placeholder="Введите ссылку на обмен">
-    <button>Получить ссылку на обмен</button>
-  </div>
-
-  <div class="inventory-section">
-    <h2>Ваш инвентарь</h2>
-    <div class="inventory-items">
-      <!-- Здесь будут отображаться предметы из инвентаря -->
-    </div>
     <button>Обменять</button>
   </div>
 
@@ -329,6 +125,7 @@
 
     // Отображаем информацию пользователя
     if (displayName && avatar) {
+      
       const userInfoElement = document.getElementById('user-info');
       const userAvatarElement = document.getElementById('user-avatar');
       const userDisplayNameElement = document.getElementById('user-display-name');
@@ -336,8 +133,8 @@
       const steamLoginLinkElement = document.getElementById('steam-login-link');
       const heroElement = document.querySelector('.hero');
       const featuresElement = document.querySelector('.features');
+      const footerElement = document.querySelector('.footer');
       const exchangeSection = document.querySelector('.exchange-section');
-      const inventorySection = document.querySelector('.inventory-section');
 
       userAvatarElement.src = avatar;
       userDisplayNameElement.textContent = displayName;
@@ -346,8 +143,8 @@
       steamLoginLinkElement.style.display = 'none';
       heroElement.style.display = 'none';
       featuresElement.style.display = 'none';
+      footerElement.style.display = 'none';
       exchangeSection.style.display = 'block';
-      inventorySection.style.display = 'block';
     }
   </script>
 </body>
